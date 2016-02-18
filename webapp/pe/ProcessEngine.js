@@ -57,9 +57,11 @@
 				if (this.processStack.length > 0) {
 					this.currentProcess = this.currentProcess.pop();
 				} else {
-					this.currentProcess.getCrossApplicationNavigation().toExternal({
-						target: this.finishTarget
-					});
+					if (this.hasCrossApplicationNavigation()) {
+						this.getCrossApplicationNavigation().toExternal({
+							target: this.finishTarget
+						});
+					}
 					this.currentProcess = null;
 				}
 			}
