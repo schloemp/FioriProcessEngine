@@ -1,7 +1,7 @@
 (function() {
 	"use strict";
-	jQuery.sap.declare("sap.pe.ProcessStep");
-	sap.pe.ProcessStep = function(aName) {
+	jQuery.sap.declare("fpe.pe.ProcessStep");
+	fpe.pe.ProcessStep = function(aName) {
 		this.name = aName;
 		this.target = {
 			semanticObject: undefined,
@@ -9,7 +9,7 @@
 		};
 		this.params = {};
 	};
-	sap.pe.ProcessStep.prototype = {
+	fpe.pe.ProcessStep.prototype = {
 		name: undefined,
 		target: {
 			semanticObject: undefined,

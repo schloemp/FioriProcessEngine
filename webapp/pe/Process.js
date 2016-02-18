@@ -1,15 +1,15 @@
 (function() {
 	"use strict";
-	jQuery.sap.declare("sap.pe.Process");
-	jQuery.sap.require("sap.pe.ProcessStep");
-	sap.pe.Process = function(aName) {
+	jQuery.sap.declare("fpe.pe.Process");
+	jQuery.sap.require("fpe.pe.ProcessStep");
+	fpe.pe.Process = function(aName) {
 		this.name = aName;
 		this.steps = [];
 		this.currentStep = undefined;
 		this.currentStepIndex = -1;
 		this.dataContainer = {};
 	};
-	sap.pe.Process.prototype = {
+	fpe.pe.Process.prototype = {
 		name: undefined,
 		steps: [],
 		currentStep: undefined,
@@ -18,7 +18,7 @@
 		processEngine: undefined,
 		init: function() {},
 		createStep: function(aName) {
-			var lS = new sap.pe.ProcessStep(aName);
+			var lS = new fpe.pe.ProcessStep(aName);
 			lS.processEngine = this;
 			return lS;
 		},

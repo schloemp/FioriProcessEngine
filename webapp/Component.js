@@ -1,4 +1,3 @@
-jQuery.sap.registerModulePath("sap.pe", "pe");
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",

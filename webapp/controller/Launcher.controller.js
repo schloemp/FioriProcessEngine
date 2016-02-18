@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/pe/ProcessEngine"
+	"fpe/pe/ProcessEngine"
 ], function(Controller) {
 	"use strict";
 

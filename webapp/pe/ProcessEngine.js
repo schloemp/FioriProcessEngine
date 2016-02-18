@@ -1,23 +1,23 @@
 (function() {
 	"use strict";
-	jQuery.sap.declare("sap.pe.ProcessEngine");
-	jQuery.sap.require("sap.pe.Process");
-	sap.pe.ProcessEngine = function() {
-		sap.pe.ProcessEngine.initialize();
+	jQuery.sap.declare("fpe.pe.ProcessEngine");
+	jQuery.sap.require("fpe.pe.Process");
+	fpe.pe.ProcessEngine = function() {
+		fpe.pe.ProcessEngine.initialize();
 	};
-	sap.pe.ProcessEngine._initialized = false;
-	sap.pe.ProcessEngine.initialize = function() {
-		if (!sap.pe.ProcessEngine._initialized) {
-			sap.pe.ProcessEngine._initialized = true;
+	fpe.pe.ProcessEngine._initialized = false;
+	fpe.pe.ProcessEngine.initialize = function() {
+		if (!fpe.pe.ProcessEngine._initialized) {
+			fpe.pe.ProcessEngine._initialized = true;
 			jQuery.sap.declare("sap.ushell.services.ProcessEngine");
-			sap.ushell.services.ProcessEngine = sap.pe.ProcessEngine;
+			sap.ushell.services.ProcessEngine = fpe.pe.ProcessEngine;
 			jQuery.sap.declare("sap.ushell.adapters.fiori.ProcessEngineAdapter");
 			sap.ushell.adapters.fiori.ProcessEngineAdapter = function(aSystem, aParameter, aConfig) {
 				jQuery.sap.log.info("ProcessEngineAdapter: System=" + aSystem + "," + aParameter + "," + aConfig);
 			};
 		}
 	};
-	sap.pe.ProcessEngine.prototype = {
+	fpe.pe.ProcessEngine.prototype = {
 		processes: {},
 		processStack: [],
 		currentProcess: undefined,
@@ -27,7 +27,7 @@
 		},
 		init: function() {},
 		createProcess: function(aName) {
-			var lP = new sap.pe.Process(aName);
+			var lP = new fpe.pe.Process(aName);
 			lP.processEngine = this;
 			return lP;
 		},
