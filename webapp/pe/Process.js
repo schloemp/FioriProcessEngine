@@ -16,14 +16,17 @@
 		currentStepIndex: -1,
 		dataContainer: {},
 		processEngine: undefined,
+		process: undefined,
 		init: function() {},
 		createStep: function(aName) {
 			var lS = new fpe.pe.ProcessStep(aName);
-			lS.processEngine = this;
+			lS.processEngine = this.processEngine;
+			lS.process = this;
 			return lS;
 		},
 		addStep: function(aStep) {
-			aStep.processEngine = this;
+			aStep.processEngine = this.processEngine;
+			aStep.process = this;
 			this.steps.push(aStep);
 			return aStep;
 		},
