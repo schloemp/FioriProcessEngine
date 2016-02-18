@@ -1,12 +1,12 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"fpe/pe/ProcessEngine"
-], function(Controller) {
+], function(Controller, ProcessEngine) {
 	"use strict";
 
 	return Controller.extend("fpe.controller.Launcher", {
 		onInit : function() {
-			fpe.pe.ProcessEngine.initialize();
+			ProcessEngine.initialize();
 		    var lPE = sap.ushell.Container.getService("ProcessEngine");
 		    var lP = lPE.createProcess("MeterReadingCorrection");
 		    var lS = lP.createStep("EnterMRKey");
