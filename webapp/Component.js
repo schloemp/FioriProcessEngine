@@ -25,7 +25,7 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			// set the config model
-			this.setModel(models.createConfigModel(), "config");
+			this.setModel(models.createConfigModel(this.getMetadata()), "config");
 			InitPE.init(this.getModel("config"));
 		}
 	});

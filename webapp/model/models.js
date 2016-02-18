@@ -12,9 +12,9 @@ sap.ui.define([
 			return oModel;
 		},
 		
-		createConfigModel: function() {
-			var oConfig = this.getMetadata().getConfig();
-			var sNamespace = this.getMetadata().getManisfestEntry("sap.app").id;
+		createConfigModel: function(aMetadata) {
+			var oConfig = aMetadata.getConfig();
+			var sNamespace = aMetadata.getManisfestEntry("sap.app").id;
 			var oConfigModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.processConfigLocal));
 			return oConfigModel;
 		}
