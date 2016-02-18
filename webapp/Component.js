@@ -23,7 +23,7 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
-			
+			 
 			var oConfig = this.getMetadata().getConfig();
 			var sNamespace = this.getMetadata().getManisfestEntry("sap.app").id;
 			var oConfigModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.processConfigLocal));
