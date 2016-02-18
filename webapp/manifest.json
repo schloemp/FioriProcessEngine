@@ -50,6 +50,9 @@
 				"sap.ui.layout": {}
 			}
 		},
+		"config": {
+			"processConfigLocal" : "/Configuration.json"
+		},
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
