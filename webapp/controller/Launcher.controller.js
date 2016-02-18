@@ -6,7 +6,7 @@ sap.ui.define([
 
 	return Controller.extend("fpe.controller.Launcher", {
 		onInit : function() {
-			//sap.pe.ProcessEngine.initialize();
+			fpe.pe.ProcessEngine.initialize();
 		    var lPE = sap.ushell.Container.getService("ProcessEngine");
 		    var lP = lPE.createProcess("MeterReadingCorrection");
 		    var lS = lP.createStep("EnterMRKey");
