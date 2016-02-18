@@ -1,19 +1,25 @@
 {
+	"Steps"     : [
+		{
+			"Name"           : "EnterMRKey",
+			"SemanticObject" : "EnterMRKey",
+			"Action"         : "Display"
+		}
+	],
+	
 	"Processes" : [ 
 		{ 
 			"Name"  : "MeterReadingCorrection",
 			"Steps" : [
 				{ 
-					"Name"           : "EnterMRKey",
-					"SemanticObject" : "EnterMRKey",
-					"Action"         : "Display",
-					"Parameters"     : [ 
+					"Name"       : "EnterMRKey",
+					"Parameters" : [ 
 						{
 							"ParamName"  : "asdf",
 							"ParamValue" : "qwer"
 						}
 					],
-					"DataFlows"      : [
+					"DataFlows"  : [
 						{	
 							"Direction"  : "In",
 							"SourcePath" : "GlobalContainer/BP",
