@@ -47,6 +47,7 @@
 				this.currentStep = this.steps[this.currentStepIndex];
 				return this.currentStep.execute();
 			} else {
+				this.currentStepIndex = -1;
 				jQuery.sap.log.info("Process '" + this.name + "' finished.");
 				return false;
 			}
