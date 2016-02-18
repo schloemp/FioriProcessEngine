@@ -22,7 +22,7 @@
 		processStack: [],
 		currentProcess: undefined,
 		finishTarget: {
-			semanticObject: "Master",
+			semanticObject: "FioriProcessEngine",
 			action: "Display"
 		},
 		init: function() {},
