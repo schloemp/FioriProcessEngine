@@ -2,8 +2,9 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
 	"sap/ui/model/json/JSONModel",
-	"fpe/model/models"
-], function(UIComponent, Device, JSONModel, models) {
+	"fpe/model/models",
+	"fpe/InitPE"
+], function(UIComponent, Device, JSONModel, models, InitPE) {
 	"use strict";
 
 	return UIComponent.extend("fpe.Component", {
@@ -23,11 +24,9 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
-			 
-			var oConfig = this.getMetadata().getConfig();
-			var sNamespace = this.getMetadata().getManisfestEntry("sap.app").id;
-			var oConfigModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.processConfigLocal));
-			this.setModel(oConfigModel, "config");
+			// set the config model
+			this.setModel(models.createConfigModel, "config");
+			InitPE.init(this.getModel("config"));
 		}
 	});
 
