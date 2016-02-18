@@ -6,7 +6,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true
+    "buildRequired": false,
+    "lastBuildDateTime": "Thu, 18 Feb 2016 07:27:54 GMT"
   },
   "generation": [
     {
@@ -21,5 +22,10 @@
     "defaultLanguage": "en",
     "defaultI18NPropertyFile": "i18n.properties",
     "resourceModelName": "i18n"
+  },
+  "hcpdeploy": {
+    "account": "s0002895131trial",
+    "name": "fioriprocessengine",
+    "lastVersionWeTriedToDeploy": "0.0.1"
   }
 }

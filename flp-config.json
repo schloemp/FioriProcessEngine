@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "FioriProcessEngine",
+        "description": "Fiori Process Engine",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#FioriProcessEngine-Display",
+        "navigationComponentName": "fpe",
+        "intentSemanticObject": "FioriProcessEngine",
+        "intentAction": "Display",
+        "html5ApplicationName": "fioriprocessengine",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "541ae1dd-df2f-4f69-8c5e-1d3a9c48bd61-1455615371245"
+        ],
+        "contentPackages": [
+            "c5442921-df4f-4d30-becf-631a6b7ceb7d"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Fiori Process Engine",
+        "subtitle": "Step by Step",
+        "searchKeywords": "Fiori Process Engine,Step by Step",
+        "displayIconUrl": "sap-icon://begin",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
