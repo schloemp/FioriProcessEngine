@@ -51,7 +51,7 @@
 			}
 		},
 		"config": {
-			"processConfigLocal" : "/Configuration.json"
+			"processConfigLocal": "/Configuration.json"
 		},
 		"contentDensities": {
 			"compact": true,
