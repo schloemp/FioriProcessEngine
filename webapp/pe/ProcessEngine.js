@@ -54,14 +54,20 @@
 		},
 		_checkProcessStack: function(aDone) {
 			if (!aDone) {
+				if (window.history.length > this.currentProcess._startHistoryLength) {
+					window.history.go(this.currentProcess._startHistoryLength - window.history.length);
+				}
 				if (this.processStack.length > 0) {
 					this.currentProcess = this.currentProcess.pop();
+					this.executeNext();
 				} else {
+					/*
 					if (this.hasCrossApplicationNavigation()) {
 						this.getCrossApplicationNavigation().toExternal({
 							target: this.finishTarget
 						});
 					}
+					*/
 					this.currentProcess = null;
 				}
 			}
