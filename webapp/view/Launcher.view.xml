@@ -1,8 +1,28 @@
-<mvc:View controllerName="fpe.controller.Launcher" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.core="sap.ui.core" controllerName="fpe.controller.Launcher">
 	<App>
 		<pages>
-			<Page title="{i18n>title}">
+			<Page title="{i18n&gt;title}">
 				<content>
+<!--					<Panel
+						headerText="Choose BP and FOP"
+						class="sapUiReponsiveMargin"
+						width="80%">
+						<content>
+							<Text
+								text="Business Partner"
+								class="sapUiSmallMargin"/>
+							
+							<Input/>
+							
+							<Button
+								text="Start FOP"
+								class="sapUiSmallMarginEnd"
+								press="onStartTest"/>
+		
+						</content>
+					</Panel>-->
+					
+					
 					<Button text="Start Test" press="onStartTest"/>
 				</content>
 			</Page>
