@@ -48,6 +48,21 @@
 					"DataFlows"  : [ ]
 				}
 			]
+		},
+		{
+			"Name"  : "MRC_ohne_Contact",
+			"Steps" : [
+				{
+					"Name"       : "EnterMRKey",
+					"Parameters" : [ ],
+					"DataFlows"  : [ ]
+				},
+				{
+					"Name"       : "MRCorrection",
+					"Parameters" : [ ],
+					"DataFlows"  : [ ]
+				}
+			]
 		}
 	]
 }
