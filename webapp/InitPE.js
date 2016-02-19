@@ -9,16 +9,18 @@ sap.ui.define([
 			ProcessEngine.initialize();
 			var lConfig = oModel.getData();
 			var lPE = sap.ushell.Container.getService("ProcessEngine");
-			//TODO create steps and processes
-		    var lP = lPE.createProcess("MeterReadingCorrection");
-		    var lS = lP.createStep("EnterMRKey");
-		    lS.setSemanticObject("EnterMRKey");
-		    lP.addStep(lS);
-		    lS = lP.createStep("MRCorrection");
-		    lS.setSemanticObject("MRCorrection");
-		    lP.addStep(lS);
-		    
-		    lPE.addProcess(lP);
+			
+			// parse configuration and initialize process engine
+			$.each(lConfig.Processes, function(aIndexProc, aProcess) {
+				var lProcess = lPE.createProcess(aProcess.Name);
+				$.each(aProcess.Steps, function(aIndexStep, aStep) {
+					var lStep = lProcess.createStep(aStep.Name);
+					var lStepTarget = ($.grep(lConfig.Steps, function(aStepTarget) { return aStepTarget.Name === aStep.Name; }))[0];
+					lStep.setSemanticObject(lStepTarget.SemanticObject);
+					lProcess.addStep(lStep);
+				});
+				lPE.addProcess(lProcess);
+			});
 		}
 	};
 });

@@ -4,6 +4,16 @@
 			"Name"           : "EnterMRKey",
 			"SemanticObject" : "EnterMRKey",
 			"Action"         : "Display"
+		},
+		{
+			"Name"			 : "MRCorrection",
+			"SemanticObject" : "MRCorrection",
+			"Action"         : "Display"
+		},
+		{
+			"Name"           : "CreateContact",
+			"SemanticObject" : "CreateContact",
+			"Action"         : "Display"
 		}
 	],
 	
@@ -26,6 +36,16 @@
 							"TargetPath" : "LocalContainer/BP"
 						}
 					]
+				},
+				{
+					"Name"       : "MRCorrection",
+					"Parameters" : [ ],
+					"DataFlows"  : [ ]
+				},
+				{
+					"Name"       : "CreateContact",
+					"Parameters" : [ ],
+					"DataFlows"  : [ ]
 				}
 			]
 		}
