@@ -14,7 +14,7 @@ sap.ui.define([
 		    var lS = lP.createStep("EnterMRKey");
 		    lS.setSemanticObject("EnterMRKey");
 		    lP.addStep(lS);
-		    lS = lPE.createStep("MRCorrection");
+		    lS = lP.createStep("MRCorrection");
 		    lS.setSemanticObject("MRCorrection");
 		    lP.addStep(lS);
 		    
