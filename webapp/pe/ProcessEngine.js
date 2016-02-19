@@ -54,11 +54,13 @@
 		},
 		_checkProcessStack: function(aDone) {
 			if (!aDone) {
-				if (window.history.length > this.currentProcess._startHistoryLength) {
-					window.history.go(this.currentProcess._startHistoryLength - window.history.length);
+				if (this.currentProcess && this.currentProcess._started) {
+					if (window.history.length > this.currentProcess._startHistoryLength) {
+						window.history.go(this.currentProcess._startHistoryLength - window.history.length);
+					}
 				}
 				if (this.processStack.length > 0) {
-					this.currentProcess = this.currentProcess.pop();
+					this.currentProcess = this.processStack.pop();
 					this.executeNext();
 				} else {
 					/*

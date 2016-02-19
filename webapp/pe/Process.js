@@ -18,6 +18,7 @@
 		processEngine: undefined,
 		_startHash: undefined,
 		_startHistoryLength: undefined,
+		_started: false,
 		init: function() {},
 		createStep: function(aName) {
 			var lS = new fpe.pe.ProcessStep(aName);
@@ -34,6 +35,7 @@
 		execute: function() {
 			this._startHash = window.location.hash;
 			this._startHistoryLength = window.history.length;
+			this._started = true;
 			if (this.currentStepIndex < 0 && this.steps.length > 0) {
 				this.currentStepIndex = 0;
 				this.currentStep = this.steps[this.currentStepIndex];
