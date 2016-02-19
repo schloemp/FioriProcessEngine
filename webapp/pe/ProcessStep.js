@@ -18,6 +18,8 @@
 		params: {},
 		fillParams: [], // { from: "NameInData", to: "Paramname"}
 		fillDatas: [], // { from: "Paramname", to: "NameInData"}
+		processEngine: undefined,
+		process: undefined,
 		init: function() {
 			return this;
 		},

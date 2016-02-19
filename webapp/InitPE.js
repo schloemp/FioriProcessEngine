@@ -9,7 +9,7 @@ sap.ui.define([
 			ProcessEngine.initialize();
 			var lConfig = oModel.getData();
 			var lPE = sap.ushell.Container.getService("ProcessEngine");
-			
+
 			// parse configuration and initialize process engine
 			$.each(lConfig.Processes, function(aIndexProc, aProcess) {
 				var lProcess = lPE.createProcess(aProcess.Name);
