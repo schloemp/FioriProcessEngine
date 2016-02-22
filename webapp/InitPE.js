@@ -17,6 +17,10 @@ sap.ui.define([
 					var lStep = lProcess.createStep(aStep.Name);
 					var lStepTarget = ($.grep(lConfig.Steps, function(aStepTarget) { return aStepTarget.Name === aStep.Name; }))[0];
 					lStep.setSemanticObject(lStepTarget.SemanticObject);
+					lStep.setAction(lStepTarget.Action);
+					$.each(aStep.Parameters, function(aIndexParam, aParam)  {
+						lStep.setParameter(aParam.ParamName, aParam.ParamValue);                         
+					});
 					lProcess.addStep(lStep);
 				});
 				lPE.addProcess(lProcess);
