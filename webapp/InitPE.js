@@ -21,6 +21,9 @@ sap.ui.define([
 					$.each(aStep.Parameters, function(aIndexParam, aParam)  {
 						lStep.setParameter(aParam.ParamName, aParam.ParamValue);                         
 					});
+					$.each(aStep.DataFlows, function(aIndexParam, aParam)  {
+						lStep.addFillData(aParam.Direction, aParam.SourcePath, aParam.TargetPath);
+					});
 					lProcess.addStep(lStep);
 				});
 				lPE.addProcess(lProcess);

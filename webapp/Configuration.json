@@ -32,20 +32,57 @@
 					"DataFlows"  : [
 						{	
 							"Direction"  : "In",
-							"SourcePath" : "GlobalContainer/BP",
-							"TargetPath" : "LocalContainer/BP"
+							"SourcePath" : "CustomerName",
+							"TargetPath" : "CustomerName"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderKey",
+							"TargetPath" : "MROrderKey"
 						}
 					]
 				},
 				{
 					"Name"       : "MRCorrection",
 					"Parameters" : [ ],
-					"DataFlows"  : [ ]
+					"DataFlows"  : [
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "CustomerName",
+							"TargetPath" : "CustomerName"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderKey",
+							"TargetPath" : "MROrderKey"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderOldValue",
+							"TargetPath" : "MROrderOldValue"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderNewValue",
+							"TargetPath" : "MROrderNewValue"
+						}
+					]
 				},
 				{
 					"Name"       : "CreateContact",
 					"Parameters" : [ ],
-					"DataFlows"  : [ ]
+					"DataFlows"  : [
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "CustomerName",
+							"TargetPath" : "CustomerName"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "{MROrderKey} was changed from value {MROrderOldValue} to {MROrderNewValue}",
+							"TargetPath" : "Text"
+						}
+					]
 				}
 			]
 		},

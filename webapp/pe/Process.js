@@ -44,20 +44,33 @@
 				jQuery.sap.log.info("Process '" + this.name + "' step not found!");
 				return false;
 			}
-			return this.currentStep.execute();
+			return this.currentStep.execute(this.dataContainer);
 		},
 		executeNext: function() {
 			if (this.currentStepIndex < 0) {
-				return this.execute();
+				return this.execute(this.dataContainer);
+			}
+			if (this.currentStep) {
+				this.currentStep.fillDataContainer(this.dataContainer);
 			}
 			this.currentStepIndex = this.currentStepIndex + 1;
 			if (this.currentStepIndex < this.steps.length) {
 				this.currentStep = this.steps[this.currentStepIndex];
-				return this.currentStep.execute();
+				return this.currentStep.execute(this.dataContainer);
 			} else {
 				this.currentStepIndex = -1;
 				jQuery.sap.log.info("Process '" + this.name + "' finished.");
 				return false;
+			}
+		},
+		setDataContainer: function(aDataContainer) {
+			this.dataContainer = aDataContainer;
+		},
+		getCurrentStepContainer : function() {
+			if (this.currentStep) {
+				return this.currentStep.getCurrentStepContainer();
+			} else {
+				return undefined;
 			}
 		}
 	};

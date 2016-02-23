@@ -1,17 +1,22 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fpe.controller.Launcher">
+<mvc:View controllerName="fpe.controller.Launcher" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<App>
 		<pages>
 			<Page title="{i18n&gt;title}">
 				<content>
-					<SearchField width="100%" placeholder="Suchen" id="__field0"/>
-					<List noDataText="Drop list items here" id="__list1">
-					    <customData>
-					        <core:CustomData key="sap-ui-fastnavgroup" value="true" writeToDom="true" id="__data1"/>
-					    </customData>
-					    <items>
-					        <StandardListItem type="Navigation" counter="0" title="Larry L. Smith" description="943 Hershell Hollow Road Cleveland, TN 37311" icon="sap-icon://customer" id="__item1"/>
-					        <StandardListItem type="Navigation" counter="0" title="Araceli L. Johnson" description="4084 Whiteman Street Pleasantville, NJ 08232" icon="sap-icon://customer" id="__item2"/>
-					        <StandardListItem type="Navigation" counter="0" title="Arthur K. Gabriel" description="224 Hanover Street New York, NY 10011" icon="sap-icon://customer" id="__item3"/></items></List>
+					<SearchField id="__field0" placeholder="Suchen" width="100%"/>
+					<List id="__list1" noDataText="Drop list items here" selectionChange="onSelectionChanged" mode="SingleSelectMaster">
+						<customData>
+							<core:CustomData id="__data1" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
+						</customData>
+						<items>
+							<StandardListItem counter="0" description="943 Hershell Hollow Road Cleveland, TN 37311" icon="sap-icon://customer" id="__item1"
+								title="Larry L. Smith" type="Navigation"/>
+							<StandardListItem counter="0" description="4084 Whiteman Street Pleasantville, NJ 08232" icon="sap-icon://customer" id="__item2"
+								title="Araceli L. Johnson" type="Navigation"/>
+							<StandardListItem counter="0" description="224 Hanover Street New York, NY 10011" icon="sap-icon://customer" id="__item3"
+								title="Arthur K. Gabriel" type="Navigation"/></items>
+					</List>
 					<ComboBox items="{ path: 'config&gt;/Processes' }" selectedKey="{input&gt;/ProcessName}">
 						<core:Item key="{config&gt;Name}" text="{config&gt;Name}"/>
 					</ComboBox>

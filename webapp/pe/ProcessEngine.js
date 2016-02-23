@@ -86,13 +86,21 @@
 			}
 			return this._checkProcessStack(aDone);
 		},
-		startProcess: function(aName) {
+		startProcess: function(aName, aDataContainer) {
 			this.init(); // be sure we are initialized
 			if (this.currentProcess) { // if we are already in a process, put it on stack
 				this.processStack.push(this.currentProcess);
 			}
 			this.currentProcess = this.getProcess(aName);
+			this.currentProcess.setDataContainer(aDataContainer);
 			return this.executeNext();
+		},
+		getCurrentStepContainer : function() {
+			if (this.currentProcess) {
+				return this.currentProcess.getCurrentStepContainer();
+			} else {
+				return undefined;
+			}
 		}
 	};
 })();

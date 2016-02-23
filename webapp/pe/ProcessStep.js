@@ -16,6 +16,7 @@
 			action: "Display"
 		},
 		params: {},
+		dataContainer: {},
 		fillParams: [], // { from: "NameInData", to: "Paramname"}
 		fillDatas: [], // { from: "Paramname", to: "NameInData"}
 		processEngine: undefined,
@@ -63,14 +64,38 @@
 				this.setParameter(lFP.to, aDataContainer[lFP.from]);
 			}
 		},
-		fillParamsToDataContainer: function(aDataContainer) {
+		fillDataContainer: function(aDataContainer) {
 			for (var i = 0; i < this.fillDatas.length; i++) {
 				var lFP = this.fillDatas[i];
-				aDataContainer[lFP.to] = this.getParameter(lFP.from);
+				if (lFP.direction === "Out") {
+					aDataContainer[lFP.to] = this.dataContainer[lFP.from];
+				}
 			}
+		},
+		fillStepContainer: function(aDataContainer) {
+			for (var i = 0; i < this.fillDatas.length; i++) {
+				var lFP = this.fillDatas[i];
+				if (lFP.direction === "In") {
+					this.dataContainer[lFP.to] = aDataContainer[lFP.from];
+				}
+			}
+		},
+		addFillData: function(aDirection, aSource, aTarget) {
+			this.fillDatas.push({
+				direction: aDirection,
+				from: aSource,
+				to: aTarget
+			});
+		},
+		addFillParam: function(aSource, aTarget) {
+			this.fillParams.push({
+				from: aSource,
+				to: aTarget
+			});
 		},
 		execute: function(aDataContainer) {
 			if (this.hasCrossApplicationNavigation()) {
+				this.fillStepContainer(aDataContainer);
 				this.fillParamsFromDataContainer(aDataContainer);
 				this.getCrossApplicationNavigation().toExternal({
 					target: this.target,
@@ -81,6 +106,9 @@
 				jQuery.sap.log.info("Service 'CrossApplicationNavigation' not found!");
 				return false;
 			}
+		},
+		getCurrentStepContainer: function() {
+			return this.dataContainer;
 		}
 	};
 })();
