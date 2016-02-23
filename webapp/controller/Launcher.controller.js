@@ -15,7 +15,11 @@ sap.ui.define([
 		onStartTest : function() {
 			var lPE = sap.ushell.Container.getService("ProcessEngine");
 			var lProcessName = this.getView().getModel("input").getProperty("/ProcessName");
-			lPE.startProcess(lProcessName);
+			if (lProcessName) {
+				lPE.startProcess(lProcessName);
+			} else {
+				sap.m.MessageToast.show("No Process");
+			}
 		}
 	});
 
