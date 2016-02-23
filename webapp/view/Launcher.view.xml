@@ -1,29 +1,13 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:sap.ui.core="sap.ui.core" controllerName="fpe.controller.Launcher">
+<mvc:View controllerName="fpe.controller.Launcher" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns="sap.m">
 	<App>
 		<pages>
 			<Page title="{i18n&gt;title}">
 				<content>
-<!--					<Panel
-						headerText="Choose BP and FOP"
-						class="sapUiReponsiveMargin"
-						width="80%">
-						<content>
-							<Text
-								text="Business Partner"
-								class="sapUiSmallMargin"/>
-							
-							<Input/>
-							
-							<Button
-								text="Start FOP"
-								class="sapUiSmallMarginEnd"
-								press="onStartTest"/>
-		
-						</content>
-					</Panel>-->
-					
-					
-					<Button text="Start Test" press="onStartTest"/>
+					<ComboBox items="{ path: 'config>/Processes' }" selectedKey="{input>/ProcessName}">
+						<core:Item key="{config>Name}" text="{config>Name}"/>
+					</ComboBox>
+					<Button press="onStartTest" text="Start Test"/>
 				</content>
 			</Page>
 		</pages>

@@ -12,9 +12,11 @@
 			jQuery.sap.declare("sap.ushell.services.ProcessEngine");
 			sap.ushell.services.ProcessEngine = fpe.pe.ProcessEngine;
 			jQuery.sap.declare("sap.ushell.adapters.fiori.ProcessEngineAdapter");
+			jQuery.sap.declare("sap.ushell.adapters.local.ProcessEngineAdapter");
 			sap.ushell.adapters.fiori.ProcessEngineAdapter = function(aSystem, aParameter, aConfig) {
 				jQuery.sap.log.info("ProcessEngineAdapter: System=" + aSystem + "," + aParameter + "," + aConfig);
 			};
+			sap.ushell.adapters.local.ProcessEngineAdapter = sap.ushell.adapters.fiori.ProcessEngineAdapter;
 		}
 	};
 	fpe.pe.ProcessEngine.prototype = {
