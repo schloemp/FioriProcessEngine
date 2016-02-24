@@ -79,7 +79,7 @@
 						},
 						{	
 							"Direction"  : "In",
-							"SourcePath" : "{MROrderKey} was changed from value {MROrderOldValue} to {MROrderNewValue}",
+							"SourcePath" : "Meter Reading Order {MROrderKey} was changed from value {MROrderOldValue} to {MROrderNewValue}",
 							"TargetPath" : "ContactText"
 						}
 					]

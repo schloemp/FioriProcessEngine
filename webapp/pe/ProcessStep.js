@@ -8,6 +8,11 @@
 			action: "Display"
 		};
 		this.params = {};
+		this.dataContainer = {};
+		this.fillParams = [];
+		this.fillDatas = [];
+		this.processEngine = undefined;
+		this.process = undefined;
 	};
 	fpe.pe.ProcessStep.prototype = {
 		name: undefined,
@@ -64,11 +69,28 @@
 				this.setParameter(lFP.to, aDataContainer[lFP.from]);
 			}
 		},
+		_replaceVariables: function(aText, aObject) {
+			if (typeof(aObject) === "object") {
+				for (var n in aObject) {
+					var lValue = aObject[n];
+					aText = aText.replace("{" + n + "}", lValue);
+				}
+			}
+			return aText;
+		},
+		_setValue: function(aSrc, aSrcName, aDst, aDstName) {
+			var lValue = aSrc[aSrcName];
+			if (aSrcName.indexOf("{") >= 0) {
+				lValue = this._replaceVariables(aSrcName, aSrc);
+			}
+			aDst[aDstName] = lValue;
+		},
 		fillDataContainer: function(aDataContainer) {
 			for (var i = 0; i < this.fillDatas.length; i++) {
 				var lFP = this.fillDatas[i];
 				if (lFP.direction === "Out") {
-					aDataContainer[lFP.to] = this.dataContainer[lFP.from];
+					//aDataContainer[lFP.to] = this.dataContainer[lFP.from];
+					this._setValue(this.dataContainer,lFP.from,aDataContainer,lFP.to);
 				}
 			}
 		},
@@ -76,7 +98,8 @@
 			for (var i = 0; i < this.fillDatas.length; i++) {
 				var lFP = this.fillDatas[i];
 				if (lFP.direction === "In") {
-					this.dataContainer[lFP.to] = aDataContainer[lFP.from];
+					//this.dataContainer[lFP.to] = aDataContainer[lFP.from];
+					this._setValue(aDataContainer,lFP.from,this.dataContainer,lFP.to);
 				}
 			}
 		},
