@@ -39,6 +39,26 @@
 							"Direction"  : "Out",
 							"SourcePath" : "MROrderKey",
 							"TargetPath" : "MROrderKey"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderDate",
+							"TargetPath" : "MROrderDate"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderType",
+							"TargetPath" : "MROrderType"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "Premise",
+							"TargetPath" : "Premise"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "Installation",
+							"TargetPath" : "Installation"
 						}
 					]
 				},
@@ -55,6 +75,31 @@
 							"Direction"  : "In",
 							"SourcePath" : "MROrderKey",
 							"TargetPath" : "MROrderKey"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderDate",
+							"TargetPath" : "MROrderOldDate"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderDate",
+							"TargetPath" : "MROrderNewDate"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderType",
+							"TargetPath" : "MROrderType"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "Premise",
+							"TargetPath" : "Premise"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "Installation",
+							"TargetPath" : "Installation"
 						},
 						{	
 							"Direction"  : "Out",
