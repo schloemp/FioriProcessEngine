@@ -1,0 +1,106 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" controllerName="fpe.controller.PEConfigurationProcesses">
+	<App>
+		<pages>
+			<Page title="Process Configuration">
+				<content>
+					<HBox id="__hbox0" width="100%">
+						<VBox direction="Column" id="__vbox0" width="30%">
+							<items>
+								<Toolbar id="__toolbar0" width="100%">
+									<customData>
+										<core:CustomData id="__data2" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
+									</customData>
+									<content>
+										<Label id="__label0" text="Process" width="100%"/>
+										<ComboBox id="__box0" items="{config&gt;/Processes}" selectedItem="Element sap.ui.core.ListItem#__item0" selectedItemId="__item0" selectedKey="" value="" selectionChange="onSelectionChanged">
+											<items>
+												<core:ListItem id="__item0" key="{config&gt;Name}" text="{config&gt;Name}"/>
+											</items>
+										</ComboBox>
+									</content>
+								</Toolbar>
+								<List id="StepList" noDataText="no steps" selectionChange="onSelectionChangedStep" headerText="Steps" mode="SingleSelectMaster">
+									<customData>
+										<core:CustomData id="__data6" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
+									</customData>
+									<items>
+										<StandardListItem counter="0" description="" icon="sap-icon://step" id="__item3" title="{config&gt;Name}" type="Navigation"/>
+									</items>
+								</List>
+							</items>
+						</VBox>
+						<VBox width="100%" direction="Column" id="StepDetail">
+						    <items>
+						        <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="__form0">
+						            <sap.ui.layout.form:content>
+						                <Label text="Step" id="__label1"/>
+						                <ComboBox selectedItem="Element sap.ui.core.ListItem#__item2" value="List Item 1" selectedKey="{config&gt;Name}" id="__box2" items="{config&gt;/Steps}">
+											<core:ListItem key="{config&gt;Name}" text="{config&gt;Name}"/>
+						                </ComboBox>
+									</sap.ui.layout.form:content>
+						        </sap.ui.layout.form:SimpleForm>
+						        <IconTabBar selectedKey="__filter0" id="__bar0">
+						            <items>
+						                <IconTabFilter text="Parameters" count="" showAll="true" id="__filter0">
+						                    <content>
+						                        <List noDataText="No Parameters" id="ParametersList">
+						                            <customData>
+						                                <core:CustomData key="sap-ui-fastnavgroup" value="true" writeToDom="true" id="__data9"/>
+						                            </customData>
+						                            <items>
+						                                <StandardListItem counter="0" title="{config&gt;ParamName}" id="__item1" description="{config&gt;ParamName} = {config&gt;ParamValue}" icon="sap-icon://value-help"/></items></List>
+						                    </content>
+						                </IconTabFilter>
+						                <IconTabFilter text="Data Flow" count="" icon="" iconColor="Default" id="__filter1">
+						                    <content>
+						                        <List noDataText="No Data Flows" id="DataFlowList" selectionChange="onSelectionChangedFlow" mode="SingleSelectMaster">
+						                            <customData>
+						                                <core:CustomData key="sap-ui-fastnavgroup" value="true" writeToDom="true" id="__data5"/>
+						                            </customData>
+						                            <items>
+						                                <CustomListItem type="Active" counter="0" id="__item7">
+						                                <content>
+						                                    <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="__form1" columnsM="4" columnsL="6" labelSpanS="2" labelSpanL="2" emptySpanS="0" maxContainerCols="6">
+						                                        <sap.ui.layout.form:content>
+						                                            <Label text="Direction" width="100%" id="__label5"/>
+						                                            <ComboBox selectedItem="Element sap.ui.core.ListItem#__item8" value="List Item 1" selectedKey="{config&gt;Direction}" selectedItemId="__item8" id="__box1">
+						                                                <items>
+						                                                    <core:ListItem text="Input" key="In" id="__item8"/>
+						                                                    <core:ListItem text="Output" key="Out" id="__item9"/>
+					                                                    </items>
+						                                            </ComboBox>
+						                                            <Label text="Target Path" id="__label2"/>
+						                                            <Input width="100%" id="__input2" value="{config&gt;TargetPath}"/>
+						                                            <Label text="Source Path" id="__label3"/>
+						                                            <Input width="100%" id="__input4" value="{config&gt;SourcePath}"/></sap.ui.layout.form:content>
+						                                    </sap.ui.layout.form:SimpleForm>
+						                                </content>
+						                                </CustomListItem>
+						                            </items></List>
+						                    </content>
+						                </IconTabFilter></items>
+						        </IconTabBar>
+						    </items>
+						</VBox>
+					<items/>
+					</HBox>
+				</content>
+			<footer>
+			    <Bar id="__bar1">
+			        <customData>
+			            <core:CustomData key="sap-ui-fastnavgroup" value="true" writeToDom="true" id="__data11"/>
+			        </customData>
+			    <contentLeft>
+			        <Button text="" width="50px" id="__button0" activeIcon="sap-icon://add-process" press="onAddStepPress" icon="sap-icon://add"/>
+			        <Button text="" width="50px" id="__button1" activeIcon="sap-icon://delete" icon="sap-icon://delete" press="onDeleteStepPress"/>
+			    </contentLeft>
+			    <contentMiddle>
+			        <Button text="Flow" width="100px" id="__button2" icon="sap-icon://add" press="onAddFlowPress"/>
+			        <Button text="Flow" width="100px" id="__button3" icon="sap-icon://delete" press="onDeleteFlowPress"/>
+			    </contentMiddle>
+			    </Bar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

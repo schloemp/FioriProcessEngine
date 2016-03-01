@@ -39,7 +39,7 @@
 	"sap.ui5": {
 		"_version": "1.1.0",
 		"rootView": {
-			"viewName": "fpe.view.Launcher",
+			"viewName": "fpe.view.Home",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -71,6 +71,59 @@
 					"uri": "css/style.css"
 				}
 			]
+		},
+		"routing": {
+			"targets": {
+				"Launcher": {
+					"viewType": "XML",
+					"transition": "fade",
+					"clearAggregation": true,
+					"viewName": "Launcher"
+				},
+				"ConfigSteps": {
+					"viewType": "XML",
+					"transition": "fade",
+					"clearAggregation": true,
+					"viewName": "PEConfigurationSteps"
+				},
+				"ConfigProcesses": {
+					"viewType": "XML",
+					"transition": "fade",
+					"clearAggregation": "true",
+					"viewName": "PEConfigurationProcesses"
+				}
+			},
+			"routes": [
+				{
+					"name": "Launcher",
+					"pattern": "Launcher",
+					"greedy": false,
+					"target": [
+						"Launcher"
+					]
+				},
+				{
+					"name": "ConfigSteps",
+					"pattern": "ConfigSteps",
+					"greedy": false,
+					"target": [
+						"ConfigSteps"
+					]
+				},
+				{
+					"name": "ConfigProcesses",
+					"pattern": "ConfigProcesses",
+					"greedy": false,
+					"target": [
+						"ConfigProcesses"
+					]
+				}
+			],
+			"config": {
+				"viewPath": "fpe.view",
+				"controlId": "PEHome",
+				"controlAggregation": "pages"
+			}
 		}
 	},
 	"sap.platform.hcp": {
