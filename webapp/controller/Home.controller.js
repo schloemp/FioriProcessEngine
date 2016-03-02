@@ -27,6 +27,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
 					var lName = lPages[i].getViewName();
 					if (lName === lVName) {
 						lNC.to(lPages[i]);
+						break;
 					}
 				}
 			}
