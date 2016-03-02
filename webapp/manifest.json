@@ -31,7 +31,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_bluecrystal"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -63,9 +66,11 @@
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"targets": {
@@ -94,27 +99,40 @@
 					"viewName": "HomeChoose"
 				}
 			},
-			"routes": [{
-				"name": "Launcher",
-				"pattern": "Launcher",
-				"greedy": false,
-				"target": ["Launcher"]
-			}, {
-				"name": "ConfigSteps",
-				"pattern": "ConfigSteps",
-				"greedy": false,
-				"target": ["ConfigSteps"]
-			}, {
-				"name": "ConfigProcesses",
-				"pattern": "ConfigProcesses",
-				"greedy": false,
-				"target": ["ConfigProcesses"]
-			}, {
-				"name": "Home",
-				"pattern": "",
-				"greedy": false,
-				"target": ["Home"]
-			}],
+			"routes": [
+				{
+					"name": "Launcher",
+					"pattern": "Launcher",
+					"greedy": false,
+					"target": [
+						"Launcher"
+					]
+				},
+				{
+					"name": "ConfigSteps",
+					"pattern": "ConfigSteps",
+					"greedy": false,
+					"target": [
+						"ConfigSteps"
+					]
+				},
+				{
+					"name": "ConfigProcesses",
+					"pattern": "ConfigProcesses",
+					"greedy": false,
+					"target": [
+						"ConfigProcesses"
+					]
+				},
+				{
+					"name": "Home",
+					"pattern": "",
+					"greedy": false,
+					"target": [
+						"Home"
+					]
+				}
+			],
 			"config": {
 				"viewPath": "fpe.view",
 				"controlId": "PEHome",
