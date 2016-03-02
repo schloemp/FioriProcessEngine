@@ -1,40 +1,37 @@
-<mvc:View controllerName="fpe.controller.PEConfigurationSteps" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m">
+<mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" controllerName="fpe.controller.PEConfigurationSteps">
 	<App>
 		<pages>
-			<Page title="Step Configuration">
+			<Page navButtonPress="onNavPress" showNavButton="true" title="Step Configuration">
 				<content>
-					<sap.ui.layout:HorizontalLayout id="__layout1" xmlns:sap.ui.layout="sap.ui.layout">
+					<sap.ui.layout:HorizontalLayout xmlns:sap.ui.layout="sap.ui.layout" id="__layout1">
 						<sap.ui.layout:content>
-							<List id="__list0" items="{config>/Steps}" mode="SingleSelectMaster" noDataText="Drop list items here" selectionChange="onSelectionChanged">
+							<List id="__list0" items="{config&gt;/Steps}" mode="SingleSelectMaster" noDataText="Drop list items here" selectionChange="onSelectionChanged">
 								<customData>
 									<core:CustomData id="__data3" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
 								</customData>
 								<items>
-									<StandardListItem counter="0" description="{config&gt;SematicObject}" icon="sap-icon://picture" id="__item0" title="{config&gt;Name}"
-										type="Navigation"/></items>
+									<StandardListItem counter="0" description="{config&gt;SematicObject}" icon="sap-icon://picture" id="__item0" title="{config&gt;Name}" type="Navigation"/>
+								</items>
 							</List>
-							<Panel id="StepDetail">
-								<customData>
-									<core:CustomData id="__data5" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
-								</customData>
-								<content>
-									<sap.ui.layout.form:SimpleForm editable="false" id="__form0" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
-										<sap.ui.layout.form:content>
-											<core:Title id="__title0" text="Step"/>
-											<Label id="__label0" text="Name"/>
-											<Input id="__input0" value="{config&gt;Name}" width="100%"/>
-											<Label id="__label1" text="Semantic Object"/>
-											<Input id="__input1" value="{config&gt;SemanticObject}" width="100%"/>
-											<Label id="__label2" text="Action"/>
-											<Input id="__input2" value="{config&gt;Action}" width="100%"/>
-										</sap.ui.layout.form:content>
-									</sap.ui.layout.form:SimpleForm>
-								</content>
-							</Panel>
+							<VBox id="StepDetail" width="100%" fitContainer="false">
+								<sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="__form0" labelSpanS="2" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content>
+										<core:Title id="__title0" text="Step"/>
+										<Label id="__label0" text="Name"/>
+										<Input id="__input0" value="{config&gt;Name}" width="100%"/>
+										<Label id="__label1" text="Semantic Object"/>
+										<Input id="__input1" value="{config&gt;SemanticObject}" width="100%"/>
+										<Label id="__label2" text="Action"/>
+										<Input id="__input2" value="{config&gt;Action}" width="100%"/>
+									</sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+							</VBox>
 						</sap.ui.layout:content>
 					</sap.ui.layout:HorizontalLayout>
 				</content>
+				<headerContent>
+					<Button icon="sap-icon://process" id="__button0" press="onConfigProcessesPress" text="" width="50px"/>
+				</headerContent>
 			</Page>
 		</pages>
 	</App>

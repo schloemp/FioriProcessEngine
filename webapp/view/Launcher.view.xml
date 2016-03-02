@@ -1,7 +1,7 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="fpe.controller.Launcher">
 	<App id="__app0">
 		<pages>
-			<Page title="{i18n&gt;title}">
+			<Page title="{i18n&gt;title}" showNavButton="true" navButtonPress="onNavPress">
 				<content>
 					<SearchField id="__field0" placeholder="Suchen" width="100%"/>
 					<List id="__list1" noDataText="Drop list items here" selectionChange="onSelectionChanged" mode="SingleSelectMaster">

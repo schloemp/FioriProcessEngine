@@ -1,15 +1,4 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="fpe.controller.Home">
-	    <Bar id="__bar1">
-	        <customData>
-	            <core:CustomData key="sap-ui-fastnavgroup" value="true" writeToDom="true" id="__data2"/>
-	        </customData>
-	    <contentLeft>
-	        <Button text="Launcher" width="100px" id="__button0" press="onLauncherPress"/>
-	    </contentLeft>
-	    <contentRight>
-	        <Button text="Processes" width="100px" id="__button2" activeIcon="sap-icon://action-settings" press="onConfigProcesses"/>
-	        <Button text="Steps" width="100px" id="__button1" press="onConfigStepsPress" activeIcon="sap-icon://action-settings"/>
-	    </contentRight>
-	    </Bar>
-	<NavContainer id="PEHome"/>
+	<NavContainer id="PEHome">
+	</NavContainer>
 </mvc:View>

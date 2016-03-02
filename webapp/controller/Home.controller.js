@@ -15,17 +15,26 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function(Controller) {
 		onRouteMatched: function(aEvent) {
 			var lConfig = aEvent.getParameter("config");
 			if (lConfig.controlId === "PEHome" && lConfig.controlAggregation === "pages") {
-				var lVName = "fpe.view.Launcher";
+				var lVName = "";
 				if (lConfig.name === "ConfigSteps") {
 					lVName = "fpe.view.PEConfigurationSteps";
 				} else if (lConfig.name === "ConfigProcesses") {
 					lVName = "fpe.view.PEConfigurationProcesses";
+				} else if (lConfig.name === "Launcher") {
+					lVName = "fpe.view.Launcher";
+				} else if (lConfig.name === "Home") {
+					lVName = "fpe.view.HomeChoose";
 				}
 				var lNC = this.getView().byId("PEHome");
 				var lPages = lNC.getPages();
 				for (var i = 0; i < lPages.length; i++) {
-					var lName = lPages[i].getViewName();
-					if (lName === lVName) {
+					if (lPages[i].getViewName) {
+						var lName = lPages[i].getViewName();
+						if (lName === lVName) {
+							lNC.to(lPages[i]);
+							break;
+						}
+					} else if (lVName === "") {
 						lNC.to(lPages[i]);
 						break;
 					}
