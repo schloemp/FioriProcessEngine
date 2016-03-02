@@ -9,27 +9,8 @@ sap.ui.define([
 			ProcessEngine.initialize();
 			var lConfig = oModel.getData();
 			var lPE = sap.ushell.Container.getService("ProcessEngine");
-
+			lPE.clearProcesses();
 			// parse configuration and initialize process engine
-			/*
-			$.each(lConfig.Processes, function(aIndexProc, aProcess) {
-				var lProcess = lPE.createProcess(aProcess.Name);
-				$.each(aProcess.Steps, function(aIndexStep, aStep) {
-					var lStep = lProcess.createStep(aStep.Name);
-					var lStepTarget = ($.grep(lConfig.Steps, function(aStepTarget) { return aStepTarget.Name === aStep.Name; }))[0];
-					lStep.setSemanticObject(lStepTarget.SemanticObject);
-					lStep.setAction(lStepTarget.Action);
-					$.each(aStep.Parameters, function(aIndexParam, aParam)  {
-						lStep.setParameter(aParam.ParamName, aParam.ParamValue);                         
-					});
-					$.each(aStep.DataFlows, function(aIndexParam, aParam)  {
-						lStep.addFillData(aParam.Direction, aParam.SourcePath, aParam.TargetPath);
-					});
-					lProcess.addStep(lStep);
-				});
-				lPE.addProcess(lProcess);
-			});
-			*/
 			var lSteps = {};
 			for (var li = 0; li < lConfig.Steps.length; li++) {
 				lSteps[lConfig.Steps[li].Name] = lConfig.Steps[li];

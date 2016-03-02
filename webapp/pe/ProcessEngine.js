@@ -77,6 +77,9 @@
 			}
 			return aDone;
 		},
+		clearProcesses: function() {
+			this.processes = {};
+		},
 		executeNext: function() {
 			var aDone;
 			if (this.currentProcess) {

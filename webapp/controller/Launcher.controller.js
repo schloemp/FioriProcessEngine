@@ -1,7 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/json/JSONModel"
-], function(Controller, JSONModel) {
+	"sap/ui/model/json/JSONModel",
+	"fpe/InitPE"
+], function(Controller, JSONModel, InitPE) {
 	"use strict";
 	return Controller.extend("fpe.controller.Launcher", {
 		getRouter: function() {
@@ -14,6 +15,7 @@ sap.ui.define([
 			this.getView().setModel(lInputModel, "input");
 		},
 		onStartTest: function() {
+			InitPE.init(this.getView().getModel("config"));
 			var lPE = sap.ushell.Container.getService("ProcessEngine");
 			var lProcessName = this.getView().getModel("input").getProperty("/ProcessName");
 			if (lProcessName) {
