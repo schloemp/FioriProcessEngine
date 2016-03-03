@@ -4,7 +4,7 @@
 			<Page title="Process Configuration" showNavButton="true" enableScrolling="true" navButtonPress="onNavPress">
 				<content>
 					<HBox id="__hbox0" width="100%">
-						<VBox direction="Column" id="__vbox0" width="30%">
+						<VBox direction="Column" id="__vbox0" width="30%" displayInline="false">
 							<items>
 								<Toolbar id="__toolbar0" width="100%">
 									<customData>
@@ -19,7 +19,7 @@
 										</ComboBox>
 									</content>
 								</Toolbar>
-								<List id="StepList" noDataText="no steps" selectionChange="onSelectionChangedStep" headerText="Steps" mode="SingleSelectMaster">
+								<List id="StepList" noDataText="no steps" selectionChange="onSelectionChangedStep" headerText="Steps" mode="SingleSelectMaster" inset="false">
 									<customData>
 										<core:CustomData id="__data6" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
 									</customData>
