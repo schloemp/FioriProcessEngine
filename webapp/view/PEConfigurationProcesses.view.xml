@@ -11,8 +11,8 @@
 										<core:CustomData id="__data2" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
 									</customData>
 									<content>
-										<Label id="__label0" text="Process" width="100%"/>
-										<ComboBox id="__box0" items="{config&gt;/Processes}" selectedItem="Element sap.ui.core.ListItem#__item0" selectedItemId="__item0" selectedKey="" value="" selectionChange="onSelectionChanged">
+										<Label id="__label0" text="Process" width="40%"/>
+										<ComboBox id="__box0" items="{config&gt;/Processes}" selectedItem="Element sap.ui.core.ListItem#__item0" selectedItemId="__item0" selectedKey="" value="" selectionChange="onSelectionChanged" width="100%">
 											<items>
 												<core:ListItem id="__item0" key="{config&gt;Name}" text="{config&gt;Name}"/>
 											</items>
