@@ -16,7 +16,7 @@
 					<ComboBox items="{ path: 'config&gt;/Processes' }" selectedKey="{input&gt;/ProcessName}">
 						<core:Item key="{config&gt;Name}" text="{config&gt;Name}"/>
 					</ComboBox>
-					<Button press="onStartTest" text="Start Test"/>
+					<Button press="onStartTest" text="Start process"/>
 				</content>
 			</Page>
 		</pages>
