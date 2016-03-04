@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"sap/ui/model/json/JSONModel",
 	"fpe/model/models",
-	"fpe/InitPE"
-], function(UIComponent, Device, JSONModel, models, InitPE) {
+	"fpe/InitPE",
+	"fpe/pe/ProcessEngine"
+], function(UIComponent, Device, JSONModel, models, InitPE, ProcessEngine) {
 	"use strict";
 
 	return UIComponent.extend("fpe.Component", {
@@ -23,12 +24,18 @@ sap.ui.define([
 			UIComponent.prototype.init.apply(this, arguments);
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
-			// set the config model
-			var oConfigModel = models.createConfigModel(this.getMetadata());
-			this.setModel(oConfigModel, "config");
-			oConfigModel.attachRequestCompleted(function() {
-				InitPE.init(oConfigModel);
-			}, InitPE);
+			if (!sap.ushell.services.ProcessEngine) {
+				ProcessEngine.initialize();
+				// set the config model
+				var oConfigModel = models.createConfigModel(this.getMetadata());
+				sap.ushell.services.ProcessEngine.oConfigModel = oConfigModel;
+				this.setModel(oConfigModel, "config");
+				oConfigModel.attachRequestCompleted(function() {
+					InitPE.init(oConfigModel);
+				}, InitPE);
+			} else {
+				this.setModel(sap.ushell.services.ProcessEngine.oConfigModel, "config");
+			}
 			this.getRouter().initialize();
 		    this.getRouter().attachRouteMatched(this.onRouteMatched, this);
 		},

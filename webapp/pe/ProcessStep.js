@@ -68,6 +68,7 @@
 				var lFP = this.fillParams[i];
 				this.setParameter(lFP.to, aDataContainer[lFP.from]);
 			}
+			this.setParameter("PEStep",this.process.steps.indexOf(this));
 		},
 		_replaceVariables: function(aText, aObject) {
 			if (typeof(aObject) === "object") {
