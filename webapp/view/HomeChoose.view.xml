@@ -9,8 +9,8 @@
 				        </customData>
 				        <tiles>
 				            <StandardTile title="Launcher" info="" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="" numberUnit="" infoState="Success" id="__tile0" removable="false" press="onLauncherPress"/>
-				            <StandardTile title="Process Configuration" info="Config" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="" numberUnit="" infoState="Success" id="__tile1" removable="false" press="onProcessConfigPress"/>
-				            <StandardTile title="Step Configuration" info="Config" icon="sap-icon://customer" activeIcon="sap-icon://customer" number="" numberUnit="" infoState="Success" id="__tile2" removable="false" press="onStepConfigPress"/></tiles></TileContainer>
+				            <StandardTile title="Process Configuration" info="Configuration" icon="sap-icon://settings" activeIcon="sap-icon://customer" number="" numberUnit="" infoState="Success" id="__tile1" removable="false" press="onProcessConfigPress"/>
+				            <StandardTile title="Step Configuration" info="Configuration" icon="sap-icon://settings" activeIcon="sap-icon://customer" number="" numberUnit="" infoState="Success" id="__tile2" removable="false" press="onStepConfigPress"/></tiles></TileContainer>
 				</content>
 			</Page>
 		</pages>

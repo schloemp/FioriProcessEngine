@@ -1,23 +1,45 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="fpe.controller.Launcher">
+<mvc:View controllerName="fpe.controller.Launcher" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<App id="__app0">
 		<pages>
-			<Page title="{i18n&gt;title}" showNavButton="true" navButtonPress="onNavPress">
+			<Page navButtonPress="onNavPress" showNavButton="true" title="{i18n&gt;title}">
 				<content>
 					<SearchField id="__field0" placeholder="Suchen" width="100%"/>
-					<List id="__list1" noDataText="Drop list items here" selectionChange="onSelectionChanged" mode="SingleSelectMaster">
+					<List id="__list1" mode="SingleSelectMaster" noDataText="Drop list items here" selectionChange="onSelectionChanged">
 						<customData>
 							<core:CustomData id="__data1" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
 						</customData>
 						<items>
-							<StandardListItem counter="0" description="943 Hershell Hollow Road Cleveland, TN 37311" icon="sap-icon://customer" id="__item1" title="Larry L. Smith" type="Navigation"/>
-							<StandardListItem counter="0" description="4084 Whiteman Street Pleasantville, NJ 08232" icon="sap-icon://customer" id="__item2" title="Araceli L. Johnson" type="Navigation"/>
-							<StandardListItem counter="0" description="224 Hanover Street New York, NY 10011" icon="sap-icon://customer" id="__item3" title="Arthur K. Gabriel" type="Navigation"/></items>
+							<StandardListItem counter="0" description="943 Hershell Hollow Road Cleveland, TN 37311" icon="sap-icon://customer" id="__item1"
+								title="Larry L. Smith" type="Navigation"/>
+							<StandardListItem counter="0" description="4084 Whiteman Street Pleasantville, NJ 08232" icon="sap-icon://customer" id="__item2"
+								title="Araceli L. Johnson" type="Navigation"/>
+							<StandardListItem counter="0" description="224 Hanover Street New York, NY 10011" icon="sap-icon://customer" id="__item3"
+								title="Arthur K. Gabriel" type="Navigation"/>
+						</items>
 					</List>
+					<!-- 
 					<ComboBox items="{ path: 'config&gt;/Processes' }" selectedKey="{input&gt;/ProcessName}">
 						<core:Item key="{config&gt;Name}" text="{config&gt;Name}"/>
 					</ComboBox>
 					<Button press="onStartTest" text="Start process"/>
+					-->
 				</content>
+				<footer>
+					<Bar id="__bar0">
+						<customData>
+							<core:CustomData id="__data2" key="sap-ui-fastnavgroup" value="true" writeToDom="true"/>
+						</customData>
+						<contentRight>
+							<ActionSelect id="__select0" items="{config&gt;/Processes}" selectedKey="{input&gt;/ProcessName}">
+								<items>
+									<core:ListItem key="{config>Name}" text="{config>Name}"/>
+								</items>
+							</ActionSelect>
+							<Button press="onStartTest" text="Run"/>
+						</contentRight>
+					</Bar>
+				</footer>
 			</Page>
 		</pages>
 	</App>
