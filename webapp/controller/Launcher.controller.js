@@ -20,7 +20,8 @@ sap.ui.define([
 			var lProcessName = this.getView().getModel("input").getProperty("/ProcessName");
 			if (lProcessName) {
 				lPE.startProcess(lProcessName, {
-					CustomerName: this.CustomerName
+					CustomerName: this.CustomerName,
+					CustomerAddress: this.CustomerAddress
 				});
 			} else {
 				sap.m.MessageToast.show("No Process");
@@ -33,8 +34,10 @@ sap.ui.define([
 			if (aEvent.getParameter("selected")) {
 				var lItem = aEvent.getParameter("listItem");
 				this.CustomerName = lItem.getTitle();
+				this.CustomerAddress = lItem.getDescription();
 			} else {
 				this.CustomerName = undefined;
+				this.CustomerAddress = undefined;
 			}
 		},
 		/**
