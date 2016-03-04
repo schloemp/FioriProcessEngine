@@ -149,15 +149,107 @@
 		{
 			"Name"  : "MRC_ohne_Contact",
 			"Steps" : [
-				{
+				{ 
 					"Name"       : "EnterMRKey",
-					"Parameters" : [ ],
-					"DataFlows"  : [ ]
+					"Parameters" : [ 
+						{
+							"ParamName"  : "SampleParam",
+							"ParamValue" : "42"
+						}
+					],
+					"DataFlows"  : [
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "CustomerName",
+							"TargetPath" : "CustomerName"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "CustomerAddress",
+							"TargetPath" : "CustomerAddress"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderKey",
+							"TargetPath" : "MROrderKey"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderDate",
+							"TargetPath" : "MROrderDate"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderType",
+							"TargetPath" : "MROrderType"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "Premise",
+							"TargetPath" : "Premise"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "Installation",
+							"TargetPath" : "Installation"
+						}
+					]
 				},
 				{
 					"Name"       : "MRCorrection",
 					"Parameters" : [ ],
-					"DataFlows"  : [ ]
+					"DataFlows"  : [
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "CustomerName",
+							"TargetPath" : "CustomerName"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "CustomerAddress",
+							"TargetPath" : "CustomerAddress"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderKey",
+							"TargetPath" : "MROrderKey"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderDate",
+							"TargetPath" : "MROrderOldDate"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderDate",
+							"TargetPath" : "MROrderNewDate"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "MROrderType",
+							"TargetPath" : "MROrderType"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "Premise",
+							"TargetPath" : "Premise"
+						},
+						{	
+							"Direction"  : "In",
+							"SourcePath" : "Installation",
+							"TargetPath" : "Installation"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderOldValue",
+							"TargetPath" : "MROrderOldValue"
+						},
+						{	
+							"Direction"  : "Out",
+							"SourcePath" : "MROrderNewValue",
+							"TargetPath" : "MROrderNewValue"
+						}
+					]
 				}
 			]
 		}
