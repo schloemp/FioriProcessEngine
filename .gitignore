@@ -10,3 +10,6 @@ mock_preview_sapui5.html
 /flp-config.json
 /.project.json
 /.user.project.json
+changes_preview.js
+extended_runnable_file.html
+.*/extended_runnable_file.html
